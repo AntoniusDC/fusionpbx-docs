@@ -1,19 +1,15 @@
 # Restore
 
-| 
+<br>
 
-It\'s always good to have a restore method of a backup in place. Here
-are the steps to a basic restore method with FusionPBX.
+It's always good to have a restore method of a backup in place.    
+Here are the steps to a basic restore method with FusionPBX.
 
-:::: note
-::: title
-Note
-:::
+>**Note:**
+>It is important to know if your installation is from package or source   
+>as the paths are different for FreeSWITCH. Always test the backups and   
+>restore methods on test machines first.
 
-It is important to know if your installation is from package or source
-as the paths are different for FreeSWITCH. Always test the backups and
-restore methods on test machines first.
-::::
 
 -   To create the script use an editor such as vi or nano.
 -   Copy/Paste from the code block below and save the file as
@@ -24,8 +20,9 @@ restore methods on test machines first.
 -   edit the script as needed and run this script from the server you
     are restoring on.
 
-<!-- -->
+<br>
 
+```
     #!/bin/sh
     now=$(date +%Y-%m-%d)
     ssh_server=x.x.x.x
@@ -60,6 +57,7 @@ restore methods on test machines first.
     psql --host=$database_host --port=$database_port  --username=fusionpbx -c 'drop schema public cascade;'
     psql --host=$database_host --port=$database_port  --username=fusionpbx -c 'create schema public;'
     #restore the database
+```
     pg_restore -v -Fc --host=$database_host --port=$database_port --dbname=fusionpbx --username=fusionpbx /var/backups/fusionpbx/postgresql/fusionpbx_pgsql_$now.sql
 
     #restart freeswitch
