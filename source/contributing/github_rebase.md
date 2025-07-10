@@ -17,10 +17,10 @@ You will be presented with a new shell
 
 **2.** Next execute the following two commands and notepad will appear
 
+```
     git fetch --all
     git rebase --ignore-date --interactive fusionpbx/master
-
-| 
+``` 
 
 change the first commit to reword and the following commit(s) to fixup
 (similar to screenshot below)
@@ -43,9 +43,9 @@ history/changes to make it update and check it has done what you want.
 **4.** If the changes are correct switch back to the git shell and
 execute this to push the changes
 
+```
     git push --force-with-lease
     exit
-
-| 
+```
 
 All done!
