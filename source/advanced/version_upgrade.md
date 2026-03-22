@@ -20,6 +20,7 @@ This is a pre-release, and so these instructions are subject to change before th
 cd /var/www/fusionpbx
 git stash
 git pull
+git checkout 5.5
 git branch
 git pull
 ```
