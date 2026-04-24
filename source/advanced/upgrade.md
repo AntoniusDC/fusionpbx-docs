@@ -34,7 +34,7 @@ video](https://youtu.be/QUB3u9pZ7ks).
 ```
     cd /var/www/fusionpbx 
     git pull
-    chown -R www-data:www-data
+    chown -R www-data:www-data /var/www/fusionpbx 
 ```
 
 ## Back to the GUI
@@ -105,7 +105,7 @@ Used to update FusionPBX to the latest release.
   
 ```
     cd /var/www/fusionpbx
-    chown -R www-data:www-data *
+    chown -R www-data:www-data /var/www/fusionpbx
 ```
 
 ### Step 2: Update Freeswitch Scripts
@@ -243,7 +243,7 @@ Needed if your menu disappeared.
     http://domain_or_ip/core/menu/menu_restore_default.php
 ```
 
-- Press \'Restore Default\' on the top right.
+- Press **Restore Default** on the top right.
   <https://your.ip/core/menu/menu.php>
 - click \'e\' next to the default menu
 - click the restore default button.
@@ -270,7 +270,7 @@ from stable to master but **not recomended to downgrade.**
 
 ```
     mv /var/www/fusionpbx /var/www/fusionpbx-old
-    cd /var/www && git clone -b 4.4 https://github.com/fusionpbx/fusionpbx.git
+    cd /var/www && git clone -b 5.5 https://github.com/fusionpbx/fusionpbx.git
     chown -R www-data:www-data /var/www/fusionpbx
 ```
 
@@ -289,6 +289,6 @@ into this directory.
     chown -R www-data:www-data /var/www/fusionpbx
 ```
 
--   Complete the normal upgrade process at Advanced -\> Upgrade
+-   Complete the normal upgrade process at **Advanced** > **Upgrade**
 -   If the menu disappears you have to upgrade schema then restore the
     default menu to get it back.
